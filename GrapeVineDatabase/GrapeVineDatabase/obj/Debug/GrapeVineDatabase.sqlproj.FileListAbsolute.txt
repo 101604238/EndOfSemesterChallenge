@@ -1,0 +1,6 @@
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\bin\Debug\GrapeVineDatabase.dacpac
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\obj\Debug\GrapeVineDatabase.sqlprojResolveAssemblyReference.cache
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\obj\Debug\GrapeVineDatabase.dll
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\obj\Debug\GrapeVineDatabase.pdb
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\bin\Debug\GrapeVineDatabase.dll
+C:\Users\STUDENT\Desktop\101604238\Projects\End of Semester Challenge\GrapeVineDatabase\GrapeVineDatabase\bin\Debug\GrapeVineDatabase.pdb

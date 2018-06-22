@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EndOfSemesterChallengeModelStoreContainer" CdmEntityContainer="EndOfSemesterChallengeEntities">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="EndOfSemesterChallengeModel.Booking">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="tourName" ColumnName="tourName" />
+          <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="dateBooked" ColumnName="dateBooked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="EndOfSemesterChallengeModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="clientFName" ColumnName="clientFName" />
+          <ScalarProperty Name="clientSName" ColumnName="clientSName" />
+          <ScalarProperty Name="clientGender" ColumnName="clientGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TourEvents">
+      <EntityTypeMapping TypeName="EndOfSemesterChallengeModel.TourEvent">
+        <MappingFragment StoreEntitySet="TourEvents">
+          <ScalarProperty Name="tourName" ColumnName="tourName" />
+          <ScalarProperty Name="eventDate" ColumnName="eventDate" />
+          <ScalarProperty Name="eventFee" ColumnName="eventFee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tours">
+      <EntityTypeMapping TypeName="EndOfSemesterChallengeModel.Tour">
+        <MappingFragment StoreEntitySet="Tours">
+          <ScalarProperty Name="tourName" ColumnName="tourName" />
+          <ScalarProperty Name="tourDescription" ColumnName="tourDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

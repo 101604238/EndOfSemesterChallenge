@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="EndOfSemesterChallengeEntities-Web.config Connection String" description="EndOfSemesterChallengeEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.GrapeVineModel.csdl|res://*/Models.GrapeVineModel.ssdl|res://*/Models.GrapeVineModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=nicholasainsworthswinburne2018.database.windows.net;initial catalog=EndOfSemesterChallenge;user id=nicholasainsworth;password=bfx-2WG-pGx-5hn;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\STUDENT\\Desktop\\101604238\\Projects\\End\ of\ Semester\ Challenge\\GrapeVineDatabase\\GrapeVineAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EndOfSemesterChallengeEntities']/@connectionString" />
+  </parameter>
+</parameters>

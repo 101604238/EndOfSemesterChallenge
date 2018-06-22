@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Bookings] (Table)
+       [dbo].[Clients] (Table)
+       [dbo].[TourEvents] (Table)
+       [dbo].[Tours] (Table)
+       [dbo].[FK_Bookings_ClientID] (Foreign Key)
+       [dbo].[FK_TourEventsTourName] (Foreign Key)
+       [dbo].[FK_TourEvents_TourName] (Foreign Key)
+
+** Supporting actions

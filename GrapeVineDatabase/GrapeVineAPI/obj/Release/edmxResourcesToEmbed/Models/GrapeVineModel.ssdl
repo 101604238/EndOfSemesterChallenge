@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EndOfSemesterChallengeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="clientID" />
+      <PropertyRef Name="tourName" />
+      <PropertyRef Name="eventDate" />
+    </Key>
+    <Property Name="clientID" Type="int" Nullable="false" />
+    <Property Name="tourName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="eventDate" Type="date" Nullable="false" />
+    <Property Name="payment" Type="money" Nullable="false" />
+    <Property Name="dateBooked" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="int" Nullable="false" />
+    <Property Name="clientFName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientSName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientGender" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TourEvents">
+    <Key>
+      <PropertyRef Name="tourName" />
+      <PropertyRef Name="eventDate" />
+    </Key>
+    <Property Name="tourName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="eventDate" Type="date" Nullable="false" />
+    <Property Name="eventFee" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tours">
+    <Key>
+      <PropertyRef Name="tourName" />
+    </Key>
+    <Property Name="tourName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tourDescription" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bookings_ClientID">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourEvents_TourName">
+    <End Role="Tours" Type="Self.Tours" Multiplicity="1" />
+    <End Role="TourEvents" Type="Self.TourEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tours">
+        <PropertyRef Name="tourName" />
+      </Principal>
+      <Dependent Role="TourEvents">
+        <PropertyRef Name="tourName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TourEventsTourName">
+    <End Role="TourEvents" Type="Self.TourEvents" Multiplicity="1" />
+    <End Role="Bookings" Type="Self.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TourEvents">
+        <PropertyRef Name="tourName" />
+        <PropertyRef Name="eventDate" />
+      </Principal>
+      <Dependent Role="Bookings">
+        <PropertyRef Name="tourName" />
+        <PropertyRef Name="eventDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EndOfSemesterChallengeModelStoreContainer">
+    <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TourEvents" EntityType="Self.TourEvents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tours" EntityType="Self.Tours" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bookings_ClientID" Association="Self.FK_Bookings_ClientID">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourEvents_TourName" Association="Self.FK_TourEvents_TourName">
+      <End Role="Tours" EntitySet="Tours" />
+      <End Role="TourEvents" EntitySet="TourEvents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TourEventsTourName" Association="Self.FK_TourEventsTourName">
+      <End Role="TourEvents" EntitySet="TourEvents" />
+      <End Role="Bookings" EntitySet="Bookings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
